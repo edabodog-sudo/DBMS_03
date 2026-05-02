@@ -175,7 +175,7 @@ Complete the sketch for all six relations (`author`, `book`, `writes`, `copy`,
 > relational model? What would go wrong if you stored multiple author IDs in a
 > single column of `book`?
 >
-> *Your answer:*
+> *Your answer:*A book can have many authors.An Author can write many books. One column cannot hold many IDs. This breaks the rules of a database.It also makes searching very hard. A join table keeps the data clean.
 
 > **Question 1.2:** `loan_id` is a surrogate key even though a loan might seem
 > to be uniquely identified by `(member_no, copy_no, loan_date)`. Name one
