@@ -374,7 +374,7 @@ by default. Run the following and observe what happens:
 > the difference between a constraint declared in DDL and one actually enforced
 > at runtime?
 
-> *Your answer:*
+> *Your answer:*"FOREIGN KEY constraint Fails". A constraint declared in the DDL exists only in Metadata.SQLite will happily accept it even if it is not enforced. If enforced is OFF , the database allows invalid data. But a constraint enforced at runtime actzally prevents illegal writes. SQLite enforces FOREIGN KEY constraints when PRAGMA foreign_key = ON (active).
 
 ---
 
