@@ -346,7 +346,7 @@ git log --oneline
 `writes`. What does this mean in practice if a librarian wants to delete an
 author who has written at least one book in the catalogue?
 
-> *Your answer:*
+> *Your answer:*"ON DELETE RESTRICT"prevents deleting an Author as long as they are Referenced in the writes table. So a librarian cannot delete an Author who has written at least one Book.
 
 **Question 2.2:** `email` in `member` is declared `UNIQUE` but is not the
 primary key. Using the vocabulary from Lecture 03, what kind of key is it?
