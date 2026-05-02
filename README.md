@@ -351,7 +351,7 @@ author who has written at least one book in the catalogue?
 **Question 2.2:** `email` in `member` is declared `UNIQUE` but is not the
 primary key. Using the vocabulary from Lecture 03, what kind of key is it?
 
-> *Your answer:*
+> *Your answer:* since email is declared UNIQUE but is not the primary key, it is a candidate key.A candidate key is any attribute that uniquely identifies a row and could serve as a primary key.
 
 **Question 2.3:** SQLite does not enforce `CHECK` or `FOREIGN KEY` constraints
 by default. Run the following and observe what happens:
