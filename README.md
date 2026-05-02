@@ -182,7 +182,7 @@ Complete the sketch for all six relations (`author`, `book`, `writes`, `copy`,
 > realistic scenario in which that composite key would fail to be a candidate
 > key.
 >
-> *Your answer:*
+> *Your answer:*Ein zusammengesetzter Schlüssel wie (member_no, copy_no, loan_date) kann scheitern, wenn ein Mitglied dasselbe Exemplar mehrmals am selben Tag ausleiht. Zum Beispiel: morgens ausleihen, mittags zurückgeben, später erneut ausleihen. Alle drei Werte wären identisch, aber es handelt sich um zwei verschiedene Ausleihen. Deshalb reicht der zusammengesetzte Schlüssel nicht aus, und ein surrogate key wie loan_id ist notwendig.
 
 ---
 
