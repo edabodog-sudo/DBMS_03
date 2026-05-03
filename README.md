@@ -470,6 +470,10 @@ SQL:
 
 ```sql
 -- write your query here
+ SELECT *
+FROM copy
+WHERE shelf LIKE 'A%';
+
 ```
 
 > Expected result: copy\_no 1 and 2.
