@@ -659,7 +659,7 @@ INSERT INTO writes VALUES (1, '978-0-201-96426-4');
 > here – but also a *primary key*. Can a relation have two candidate keys? Give
 > an example from the library schema.
 >
-> *Your answer:*
+> *Your answer:*Yes. A relation may have several candidate keys, but only one is chosen as the primary key. Example: in the menber table, menber_no is the primary key, but email could also be a candidate key if declared UNIQUE.
 
 ---
 
