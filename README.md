@@ -808,7 +808,8 @@ joins. SQL does not prescribe an execution order; the query optimizer may
 reorder these joins freely. Under what condition would reordering a join change
 the *result* of a query? Under what condition is it always safe?
 
-> *Your answer:*
+> *Your answer:*Reordering joins changes the result only when outer joins or non‑equi joins are involved.
+With pure inner equi‑joins, reordering is always safe.
 
 **Question B – NULL semantics:**  
 `return_date` is `NULL` for an open loan. `NULL` in SQL does not mean zero or
@@ -816,7 +817,7 @@ false – it means *unknown*. Consider the query `WHERE return_date = NULL`.
 Will it return the open loans? Explain why or why not and write the correct
 form.
 
-> *Your answer:*
+> *Your answer:*Return_date is NULL returns no rows because comparison with NULL are never true the corect form will be : WHERE return_date is NULL.
 
 **Question C – Surrogate vs. natural key:**  
 `book` uses `isbn` as its natural primary key; all other entities use surrogate
@@ -824,8 +825,9 @@ integer keys. Suppose the library occasionally receives books without an ISBN
 (unpublished manuscripts, internal reports). How would this affect the `isbn`
 primary key? What design change would you make?
 
-> *Your answer:*
-
+> *Your answer:*Using isbn as the primary key works only if every book has an ISBN.
+If the library receives items without an ISBN (manuscripts, internal reports), then isbn can no longer serve as a universal primary key because it would be NULL or missing for some rows — and primary keys cannot contain NULL values.the design change would be : "book_id INTEGER PRIMARY KEY".
+<
 **Question D – Relational algebra limitations:**  
 Suppose the library wants to find all members who have borrowed the same copy
 more than once (the copy was returned and then borrowed again). Write the SQL
@@ -834,7 +836,9 @@ operators of the relational algebra (σ, π, ρ, ×, −) without aggregation?
 What does this tell you about the relationship between relational algebra and
 SQL?
 
-> *Your answer:*
+> *Your answer:*Using isbn as the primary key works only if every book has an ISBN.
+If the library receives items without an ISBN (manuscripts, internal reports), then isbn can no longer serve as a universal primary key because it would be NULL or missing for some rows — and primary keys cannot contain NULL values. The correct design change is: "book_id INTEGER PRIMARY KEY"
+
 
 > **Screenshot 4:** Take a screenshot of your terminal showing the output of
 > the query from Task 4d (the join across four relations), and insert it here.
