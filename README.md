@@ -643,7 +643,9 @@ DELETE FROM member WHERE member_no = 102;
 > `DELETE`. What happens to Schneider's loan row? Is this behaviour desirable
 > for a library system? Justify your answer.
 >
-> *Your answer:*
+> *Your answer:*If ON DELETE CASCADE is used, deleting member 102 also deletes Schneider’s loan row automatically.
+This is not desirable in a library system because loan history must be preserved.
+Deleting members should not erase past borrowing records, so ON DELETE RESTRICT is the appropriate choice.
 
 ### Task 5c – Verify the composite primary key of `writes`
 
