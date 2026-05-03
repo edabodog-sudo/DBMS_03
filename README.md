@@ -507,7 +507,10 @@ $$\pi_{\mathrm{isbn},\,\mathrm{shelf\_loc}}\!\left(\sigma_{\mathrm{shelf\_loc} \
 SQL:
 
 ```sql
--- write your query here
+-- write your query hereSELECT isbn, shelf
+FROM copy
+WHERE shelf >= 'B';
+
 ```
 
 > Expected result: copy\_no 3 (B-07) and copy\_no 4 (C-12).
@@ -529,6 +532,13 @@ SQL:
 
 ```sql
 -- write your query here
+SELECT member.full_name, book.title
+FROM loan
+JOIN member ON loan.member_no = member.member_no
+JOIN copy ON loan.copy_no = copy.copy_no
+JOIN book ON copy.isbn = book.isbn
+WHERE loan.return_date IS NULL;
+
 ```
 
 > Expected result: two rows – Schneider borrowing *Database Management Systems*,
