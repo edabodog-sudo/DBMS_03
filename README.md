@@ -489,6 +489,9 @@ SQL:
 
 ```sql
 -- write your query here
+SELECT title, published_year
+FROM book;
+
 ```
 
 > Expected result: three rows, two columns each.
