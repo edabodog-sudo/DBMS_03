@@ -568,7 +568,11 @@ not in a `WHERE` clause. What would happen to Koch's row if you moved this
 condition into `WHERE return_date IS NULL`? Why? Refer to the formal definition
 of the outer join from Lecture 03.
 
-> *Your answer:*
+> *Your answer:*If the condition return_date IS NULL is moved into the WHERE clause, Koch’s row disappears from the result.
+This happens because the WHERE clause filters rows after the join.
+In a LEFT OUTER JOIN, members without matching loans receive NULL values for the loan columns.
+The condition WHERE return_date IS NULL removes these NULL-generated rows, effectively turning the LEFT JOIN into an INNER JOIN.
+Therefore, members with zero active loans (like Koch) would no longer appear.
 
 ### Task 4f – Set Difference
 
