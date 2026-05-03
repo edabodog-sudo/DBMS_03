@@ -587,6 +587,13 @@ In SQL, set difference is expressed with `EXCEPT`:
 
 ```sql
 -- write your query here
+SELECT isbn
+FROM book
+EXCEPT
+SELECT copy.isbn
+FROM copy
+JOIN loan ON copy.copy_no = loan.copy_no;
+
 ```
 
 > Expected result: *The C Programming Language* (copy 4 was never loaned).
