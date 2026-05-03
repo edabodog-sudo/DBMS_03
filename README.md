@@ -627,7 +627,7 @@ VALUES (999, 1, '2026-05-01');
 > **Question 5.1:** Which specific constraint fired? Name the table and the
 > foreign key column involved.
 >
-> *Your answer:*
+> *Your answer:*The constraint that fired is the foreign key on the loan table, column member_no, which references member(member_no). Since member 999 does not exist, the referential integrity check fails.
 
 ### Task 5b – Delete a member with active loans
 
