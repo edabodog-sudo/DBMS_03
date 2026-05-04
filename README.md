@@ -52,7 +52,8 @@ git --version
 > **Screenshot 1:** Take a screenshot of your terminal showing both version
 > checks and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="817" height="157" alt="Screenshot 1" src="https://github.com/user-attachments/assets/2aff1f5c-3774-4529-9527-37b7f99a934e" />
+
 
 ---
 
@@ -293,7 +294,8 @@ sqlite3 library.db < schema.sql
 > **Screenshot 2:** Take a screenshot of the terminal showing the `.tables`
 > output and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="640" height="123" alt="Screenshot 2" src="https://github.com/user-attachments/assets/bc444a72-84b7-4b44-82c0-91cf7e1cf3c5" />
+
 
 ### Task 2c – Commit
 
@@ -764,7 +766,8 @@ If you have not used `scp` before, work through this exercise first:
 > **Screenshot 3:** Take a screenshot of `schema.svg` showing all six entities
 > and all five relationships, and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]`<img width="631" height="532" alt="Screenshot 3" src="https://github.com/user-attachments/assets/403639cd-c2a3-4f78-a99b-3f4c08731812" />
+
 
 Add `schema.svg` to `.gitignore` (it is generated, not authored):
 
@@ -836,14 +839,16 @@ operators of the relational algebra (σ, π, ρ, ×, −) without aggregation?
 What does this tell you about the relationship between relational algebra and
 SQL?
 
-> *Your answer:*Using isbn as the primary key works only if every book has an ISBN.
-If the library receives items without an ISBN (manuscripts, internal reports), then isbn can no longer serve as a universal primary key because it would be NULL or missing for some rows — and primary keys cannot contain NULL values. The correct design change is: "book_id INTEGER PRIMARY KEY"
+> *Your answer:The SQL query uses GROUP BY and HAVING COUNT(*) > 1 to find members who borrowed the same copy more than once.
+This requires counting and aggregation. 
+Basic relational algebra (σ, π, ρ, ×, −) cannot perform aggregation.
+Therefore, the query cannot be expressed using only the five basic operators.
 
 
 > **Screenshot 4:** Take a screenshot of your terminal showing the output of
 > the query from Task 4d (the join across four relations), and insert it here.
 >
-> `[insert screenshot]`
+> `[insert screenshot]` <img width="1860" height="635" alt="Screenshot 2026-05-04 123132" src="https://github.com/user-attachments/assets/7c709d2e-0ed4-4c0a-947e-5d99f4418b00" />
 
 ---
 
